@@ -1,10 +1,22 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
+const adminRoute = require('./routes/admin');
 
 const app = express();
 
-app.get('/', (req, res) => res.send('Home Route'));
+app.use(cors());
+
+app.set('view engine', 'ejs');
+app.set('views', './src/pages');
+
+app.use(express.urlencoded({ extended: false }));
+
+app.use('/static', express.static(path.join(`${__dirname}/public`)));
+
+app.use('/', adminRoute);
 
 const port = process.env.PORT || 8080;
 

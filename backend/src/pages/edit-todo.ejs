@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Add Task</title>
+	</head>
+	<body>
+		<form method="POST" action="/add-todo">
+			<div>
+				<label>Title</label>
+				<input type="text" name="title" />
+			</div>
+			<div>
+				<label>Notes</label>
+				<input type="text" name="notes" />
+			</div>
+			<div>
+				<label>Priority</label>
+				<select name="priority">
+					<option value="Low">Low</option>
+					<option value="medium">Medium</option>
+					<option value="High">High</option>
+				</select>
+			</div>
+			<div>
+				<label>Image</label>
+				<input type="text" name="image" />
+			</div>
+			<div>
+				<button type="submit">Add Task</button>
+			</div>
+		</form>
+	</body>
+</html>
