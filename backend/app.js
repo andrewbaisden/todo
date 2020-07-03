@@ -21,6 +21,7 @@ app.use('/', adminRoute);
 const port = process.env.PORT || 8080;
 
 mongoose
+	// Add either local or online database credentials to the connect paramater to connect to a database
 	.connect(process.env.DB_HOST, { useNewUrlParser: true, useUnifiedTopology: true })
 	.then(() => {
 		app.listen(port, () => console.log(`Server and database running on ${port}, http://localhost:${port}`));
