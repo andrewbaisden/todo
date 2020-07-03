@@ -1,7 +1,32 @@
 const Notes = require('../models/Todo');
 
-exports.getIndex = (req, res) => {
+exports.getIndex = async (req, res) => {
 	res.render('index');
+};
+
+exports.getToDos = async (req, res) => {
+	const todos = await Notes.find((note) => note);
+
+	try {
+		console.log(todos);
+		res.render('todos');
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+exports.getToDo = async (req, res) => {
+	const todoId = req.params.todoId;
+
+	console.log(todoId);
+
+	const todo = await Notes.findById(todoId, (todo) => todo);
+
+	try {
+		console.log(todo);
+	} catch (error) {
+		console.log(error);
+	}
 };
 
 exports.getAddToDo = (req, res) => {

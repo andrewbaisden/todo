@@ -9,4 +9,8 @@ router.get('/add-todo', adminController.getAddToDo);
 
 router.post('/add-todo', adminController.postAddToDo);
 
+router.get('/todo', adminController.getToDos);
+
+router.get('/todo/:todoId', adminController.getToDo);
+
 module.exports = router;
