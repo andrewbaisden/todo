@@ -60,6 +60,27 @@ exports.postAddToDo = (req, res) => {
 	res.status(201).redirect('/todo');
 };
 
+exports.postEditToDo = (req, res) => {
+	const noteId = req.body.noteId;
+	const { title, notes, priority, image } = req.body;
+
+	Notes.findById(noteId)
+		.then((note) => {
+			note.title = title;
+			note.notes = notes;
+			note.priority = priority;
+			note.image = image;
+
+			return note.save();
+		})
+		.then(() => {
+			res.status(200).redirect('/todo');
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+};
+
 exports.postDeleteToDo = async (req, res) => {
 	const todoId = req.body.todoId;
 

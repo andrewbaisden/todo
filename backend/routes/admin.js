@@ -11,6 +11,8 @@ router.get('/edit-todo/:todoId', adminController.getEditToDo);
 
 router.post('/add-todo', adminController.postAddToDo);
 
+router.post('/edit-todo', adminController.postEditToDo);
+
 router.get('/todo', adminController.getToDos);
 
 router.get('/todo/:todoId', adminController.getToDo);
