@@ -6,6 +6,9 @@
 		<title>Add Task</title>
 	</head>
 	<body>
+		<h1>
+			<% if(editing) { %> Edit Task <% } else { %> Add Task <% } %>
+		</h1>
 		<form method="POST" action="/add-todo">
 			<div>
 				<label>Title</label>

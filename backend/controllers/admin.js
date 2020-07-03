@@ -31,7 +31,24 @@ exports.getToDo = async (req, res) => {
 };
 
 exports.getAddToDo = (req, res) => {
-	res.render('edit-todo');
+	res.render('edit-todo', { editing: false });
+};
+
+exports.getEditToDo = (req, res) => {
+	const editMode = req.query.edit;
+
+	if (!editMode) {
+		return res.redirect('/todo');
+	}
+
+	const todoId = req.params.todoId;
+
+	Notes.findById(todoId).then((note) => {
+		if (!note) {
+			return res.redirect('/todo');
+		}
+		res.render('edit-todo', { note: note, editing: editMode });
+	});
 };
 
 exports.postAddToDo = (req, res) => {

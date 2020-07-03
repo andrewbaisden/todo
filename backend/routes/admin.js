@@ -7,6 +7,8 @@ router.get('/', adminController.getIndex);
 
 router.get('/add-todo', adminController.getAddToDo);
 
+router.get('/edit-todo/:todoId', adminController.getEditToDo);
+
 router.post('/add-todo', adminController.postAddToDo);
 
 router.get('/todo', adminController.getToDos);
