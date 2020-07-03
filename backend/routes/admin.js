@@ -13,4 +13,6 @@ router.get('/todo', adminController.getToDos);
 
 router.get('/todo/:todoId', adminController.getToDo);
 
+router.post('/delete', adminController.postDeleteToDo);
+
 module.exports = router;

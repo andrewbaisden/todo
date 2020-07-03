@@ -7,5 +7,15 @@
 	</head>
 	<body>
 		<h1>To Do Home Page</h1>
+		<div>
+			<% todos.forEach(todo => { %>
+			<ul>
+				<li><a href="/todo/<%= todo.id %>"><%= todo.title %></a></li>
+				<li><%= todo.notes %></li>
+				<li><%= todo.priority %></li>
+				<li><img src="<%= todo.image %>" alt="<%= todo.title %>" /></li>
+			</ul>
+			<% }) %>
+		</div>
 	</body>
 </html>
