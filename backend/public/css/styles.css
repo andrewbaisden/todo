@@ -46,6 +46,11 @@ body {
 	text-decoration: none;
 }
 
+.todo-home-dashboard {
+	height: 100vh;
+	width: 100%;
+}
+
 .container {
 	display: flex;
 	flex-flow: row wrap;
@@ -104,6 +109,7 @@ body {
 	width: 100%;
 	text-align: center;
 	margin-bottom: 2rem;
+	font-weight: bold;
 }
 
 .priority-Medium {
@@ -114,6 +120,7 @@ body {
 	text-align: center;
 	color: #1e213b;
 	margin-bottom: 2rem;
+	font-weight: bold;
 }
 
 .priority-High {
@@ -123,6 +130,7 @@ body {
 	width: 100%;
 	text-align: center;
 	margin-bottom: 2rem;
+	font-weight: bold;
 }
 
 .todo-delete {
@@ -130,7 +138,71 @@ body {
 	justify-content: flex-end;
 }
 
-.todo-delete button {
+.todo-delete-btn {
 	padding: 0.3rem;
 	cursor: pointer;
+}
+
+.todo-form-container {
+	margin: 0 auto;
+	width: 120rem;
+	max-width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.todo-form {
+	width: 120rem;
+	max-width: 100%;
+	padding: 2rem;
+}
+
+.todo-form input {
+	height: 3rem;
+	width: 100%;
+	padding: 0.5rem;
+}
+
+.todo-form button {
+	margin-top: 2rem;
+	background: #9fa2ff;
+	padding: 1rem;
+	border: none;
+	cursor: pointer;
+}
+
+.todo-content-container {
+	display: flex;
+	justify-content: center;
+}
+
+.todo-content ul {
+	list-style: none;
+}
+
+.todo-content img {
+	width: 50rem;
+	height: 30rem;
+}
+
+.todo-edit a {
+	text-align: center;
+	background: #9fa2ff;
+	padding: 0.4rem;
+	width: 5rem;
+	display: block;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.todo-delete-button-content {
+	text-align: center;
+	margin: 0;
+	background: red;
+	padding: 1rem;
+	width: 8rem;
+	cursor: pointer;
+	text-decoration: none;
+	color: #ffffff;
+	border: none;
 }

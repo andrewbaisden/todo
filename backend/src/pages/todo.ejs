@@ -1,22 +1,26 @@
 <%- include('header'); -%>
 
-	<div>
-		<h1><%= todo.id %></h1>
-		<ul>
-			<li><%= todo.title %></li>
-			<li><%= todo.notes %></li>
-			<li><%= todo.priority %></li>
-			<li><img src="<%= todo.image %>" alt="<%= todo.title %>" /></li>
-		</ul>
+<div class="todo-content-container">
+	<div class="todo-content">
+		<div>
+			<ul>
+				<li><h1><%= todo.title %></h1></li>
+				<li><%= todo.notes %></li>
+				<li><p class="priority-<%= todo.priority %>"><%= todo.priority %></p></li>
+				<li><img src="<%= todo.image %>" alt="<%= todo.title %>" /></li>
+			</ul>
+		</div>
+		<div class="todo-delete">
+			<div class="todo-edit">
+				<a href="/edit-todo/<%= todo.id %>?edit=true">Edit</a>
+			</div>
+			<form method="POST" action="/delete">
+				<input type="hidden" name="todoId" value="<%= todo.id %>" />
+				<button type="submit" class="todo-delete-button-content">Delete</button>
+			</form>
+		</div>
+		
 	</div>
-	<div>
-		<form method="POST" action="/delete">
-			<input type="hidden" name="todoId" value="<%= todo.id %>" />
-			<button type="submit">Delete</button>
-		</form>
-	</div>
-	<div>
-		<a href="/edit-todo/<%= todo.id %>?edit=true">Edit</a>
-	</div>
+</div>
 	<%- include('footer'); -%>
 </body>

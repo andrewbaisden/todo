@@ -1,37 +1,40 @@
 <%- include('header'); -%>
+		
+<div class="todo-form-container">
+	<form class="todo-form" method="POST" action="/<% if(editing) { %>edit-todo<% } else { %>add-todo<% } %>">
 		<h1>
-			<% if(editing) { %> Edit Task <% } else { %> Add Task <% } %>
+			<% if(editing) { %> Edit Todo <% } else { %> Add Todo <% } %>
 		</h1>
-		<form method="POST" action="/<% if(editing) { %>edit-todo<% } else { %>add-todo<% } %>">
+		<div>
+			<label>Title</label>
+			<input type="text" name="title" value="<% if(editing) { %><%= note.title %><% } %>" />
+		</div>
+		<div>
+			<label>Notes</label>
+			<input type="text" name="notes" value="<% if(editing) { %><%= note.notes %><% } %>" />
+		</div>
+		<div>
+			<label>Priority</label>
+			<select name="priority">
+				<option value="Low" <% if(editing && note.priority === "Low") { %> selected <% } else { %> <% } %> >Low</option>
+				<option value="Medium" <% if(editing && note.priority === "Medium") { %> selected <% } else { %> <% } %> >Medium</option>
+				<option value="High" <% if(editing && note.priority === "High") { %> selected <% } else { %> <% } %> >High</option>
+			</select>
+		</div>
+		<div>
+			<label>Image</label>
+			<input type="text" name="image" value="<% if(editing) { %><%= note.image %><% } %>" />
+		</div>
+		<% if(editing) { %>
 			<div>
-				<label>Title</label>
-				<input type="text" name="title" value="<% if(editing) { %><%= note.title %><% } %>" />
+				<input type="hidden" name="noteId" value="<%= note.id %>" />
 			</div>
-			<div>
-				<label>Notes</label>
-				<input type="text" name="notes" value="<% if(editing) { %><%= note.notes %><% } %>" />
-			</div>
-			<div>
-				<label>Priority</label>
-				<select name="priority">
-					<option value="Low" <% if(editing && note.priority === "Low") { %> selected <% } else { %> <% } %> >Low</option>
-					<option value="Medium" <% if(editing && note.priority === "Medium") { %> selected <% } else { %> <% } %> >Medium</option>
-					<option value="High" <% if(editing && note.priority === "High") { %> selected <% } else { %> <% } %> >High</option>
-				</select>
-			</div>
-			<div>
-				<label>Image</label>
-				<input type="text" name="image" value="<% if(editing) { %><%= note.image %><% } %>" />
-			</div>
-			<% if(editing) { %>
-				<div>
-					<input type="hidden" name="noteId" value="<%= note.id %>" />
-				</div>
-			<% } %>
-			
-			<div>
-				<button type="submit"><% if(editing) { %> Edit Task <% } else { %> Add Task <% } %></button>
-			</div>
-			
-		</form>
+		<% } %>
+		
+		<div>
+			<button type="submit"><% if(editing) { %> Edit Todo <% } else { %> Add Todo <% } %></button>
+		</div>
+		
+	</form>
+</div>
 		<%- include('footer'); -%>
