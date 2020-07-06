@@ -79,12 +79,13 @@ body {
 	height: 10rem;
 	background: #0e1021;
 	border-radius: 50%;
+	overflow: hidden;
 }
 
 .todo-image img {
-	width: 10rem;
-	height: 10rem;
-	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
 }
 
 .todo-description {
