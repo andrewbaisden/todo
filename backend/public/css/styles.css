@@ -74,6 +74,13 @@ body {
 	flex-flow: row wrap;
 }
 
+.todo-image {
+	width: 10rem;
+	height: 10rem;
+	background: #0e1021;
+	border-radius: 50%;
+}
+
 .todo-image img {
 	width: 10rem;
 	height: 10rem;
@@ -96,6 +103,9 @@ body {
 	text-transform: uppercase;
 	margin-bottom: 2rem;
 	display: block;
+	padding: 0.3rem;
+	background: #1e213b;
+	text-align: center;
 }
 
 .todo-notes {
@@ -174,10 +184,17 @@ body {
 .todo-content-container {
 	display: flex;
 	justify-content: center;
+	margin-bottom: 2rem;
 }
 
 .todo-content ul {
 	list-style: none;
+}
+
+.todo-content-image {
+	width: 50rem;
+	height: 30rem;
+	background: #0e1021;
 }
 
 .todo-content img {
@@ -205,4 +222,63 @@ body {
 	text-decoration: none;
 	color: #ffffff;
 	border: none;
+}
+
+.todo-stats {
+	margin-bottom: 5rem;
+}
+
+.stats {
+	margin-bottom: 1rem;
+}
+
+.stat-bar-bg {
+	background: #121425;
+	width: 100%;
+	height: 1rem;
+	border-radius: 1rem;
+}
+
+.stat-bar-progress-0 {
+	width: 0%;
+	height: 1rem;
+	border-radius: 1rem;
+	background: #e3336e;
+}
+
+.stat-bar-progress-25 {
+	width: 25%;
+	height: 1rem;
+	border-radius: 1rem;
+	background: #e3336e;
+}
+
+.stat-bar-progress-50 {
+	width: 50%;
+	height: 1rem;
+	border-radius: 1rem;
+	background: #e3336e;
+}
+
+.stat-bar-progress-75 {
+	width: 75%;
+	height: 1rem;
+	border-radius: 1rem;
+	background: #e3336e;
+}
+
+.stat-bar-progress-100 {
+	width: 100%;
+	height: 1rem;
+	border-radius: 1rem;
+	background: #e3336e;
+}
+
+.todo-form-btn {
+	color: #ffffff;
+}
+
+select,
+input {
+	margin: 1rem 0 1rem 0;
 }

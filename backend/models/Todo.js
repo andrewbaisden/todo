@@ -15,6 +15,18 @@ const ToDoSchema = mongoose.Schema({
 	},
 	image: {
 		type: String,
+		required: false,
+	},
+	progress: {
+		type: String,
+		required: true,
+	},
+	workRate: {
+		type: String,
+		required: true,
+	},
+	procrastination: {
+		type: String,
 		required: true,
 	},
 });

@@ -7,11 +7,11 @@
 		</h1>
 		<div>
 			<label>Title</label>
-			<input type="text" name="title" value="<% if(editing) { %><%= note.title %><% } %>" />
+			<input type="text" name="title" value="<% if(editing) { %><%= note.title %><% } %>" required maxlength="40" />
 		</div>
 		<div>
 			<label>Notes</label>
-			<input type="text" name="notes" value="<% if(editing) { %><%= note.notes %><% } %>" />
+			<input type="text" name="notes" value="<% if(editing) { %><%= note.notes %><% } %>" required maxlength="100" />
 		</div>
 		<div>
 			<label>Priority</label>
@@ -25,6 +25,36 @@
 			<label>Image</label>
 			<input type="text" name="image" value="<% if(editing) { %><%= note.image %><% } %>" />
 		</div>
+		<div>
+			<label>Progress Stat</label>
+			<select name="progress">
+				<option value="0" <% if(editing && note.progress === "0") { %> selected <% } else { %> <% } %> >0%</option>
+				<option value="25" <% if(editing && note.progress === "25") { %> selected <% } else { %> <% } %> >25%</option>
+				<option value="50" <% if(editing && note.progress === "50") { %> selected <% } else { %> <% } %> >50%</option>
+				<option value="75" <% if(editing && note.progress === "75") { %> selected <% } else { %> <% } %> >75%</option>
+				<option value="100" <% if(editing && note.progress === "100") { %> selected <% } else { %> <% } %> >100%</option>
+			</select>
+		</div>
+		<div>
+			<label>Work Rate Stat</label>
+			<select name="workRate">
+				<option value="0" <% if(editing && note.workRate === "0") { %> selected <% } else { %> <% } %> >0%</option>
+				<option value="25" <% if(editing && note.workRate === "25") { %> selected <% } else { %> <% } %> >25%</option>
+				<option value="50" <% if(editing && note.workRate === "50") { %> selected <% } else { %> <% } %> >50%</option>
+				<option value="75" <% if(editing && note.workRate === "75") { %> selected <% } else { %> <% } %> >75%</option>
+				<option value="100" <% if(editing && note.workRate === "100") { %> selected <% } else { %> <% } %> >100%</option>
+			</select>
+		</div>
+		<div>
+			<label>Procrastination Stat</label>
+			<select name="procrastination">
+				<option value="0" <% if(editing && note.procrastination === "0") { %> selected <% } else { %> <% } %> >0%</option>
+				<option value="25" <% if(editing && note.procrastination === "25") { %> selected <% } else { %> <% } %> >25%</option>
+				<option value="50" <% if(editing && note.procrastination === "50") { %> selected <% } else { %> <% } %> >50%</option>
+				<option value="75" <% if(editing && note.procrastination === "75") { %> selected <% } else { %> <% } %> >75%</option>
+				<option value="100" <% if(editing && note.procrastination === "100") { %> selected <% } else { %> <% } %> >100%</option>
+			</select>
+		</div>
 		<% if(editing) { %>
 			<div>
 				<input type="hidden" name="noteId" value="<%= note.id %>" />
@@ -32,7 +62,7 @@
 		<% } %>
 		
 		<div>
-			<button type="submit"><% if(editing) { %> Edit Todo <% } else { %> Add Todo <% } %></button>
+			<button type="submit" class="todo-form-btn"><% if(editing) { %> Edit Todo <% } else { %> Add Todo <% } %></button>
 		</div>
 		
 	</form>

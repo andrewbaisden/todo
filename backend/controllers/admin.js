@@ -52,9 +52,17 @@ exports.getEditToDo = (req, res) => {
 };
 
 exports.postAddToDo = (req, res) => {
-	const { title, notes, priority, image } = req.body;
+	const { title, notes, priority, image, progress, workRate, procrastination } = req.body;
 
-	const todo = new Notes({ title: title, notes: notes, priority: priority, image: image });
+	const todo = new Notes({
+		title: title,
+		notes: notes,
+		priority: priority,
+		image: image,
+		progress: progress,
+		workRate: workRate,
+		procrastination: procrastination,
+	});
 	todo.save();
 	console.log('Task Added');
 	res.status(201).redirect('/todo');
@@ -62,7 +70,7 @@ exports.postAddToDo = (req, res) => {
 
 exports.postEditToDo = (req, res) => {
 	const noteId = req.body.noteId;
-	const { title, notes, priority, image } = req.body;
+	const { title, notes, priority, image, progress, workRate, procrastination } = req.body;
 
 	Notes.findById(noteId)
 		.then((note) => {
@@ -70,6 +78,9 @@ exports.postEditToDo = (req, res) => {
 			note.notes = notes;
 			note.priority = priority;
 			note.image = image;
+			note.progress = progress;
+			note.workRate = workRate;
+			note.procrastination = procrastination;
 
 			return note.save();
 		})

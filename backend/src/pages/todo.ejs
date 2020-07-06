@@ -7,8 +7,32 @@
 				<li><h1><%= todo.title %></h1></li>
 				<li><%= todo.notes %></li>
 				<li><p class="priority-<%= todo.priority %>"><%= todo.priority %></p></li>
-				<li><img src="<%= todo.image %>" alt="<%= todo.title %>" /></li>
+				<li><div class="todo-content-image"><img src="<%= todo.image %>" /></div></li>
 			</ul>
+			<div class="todo-stats">
+				<h1>Stats</h1>
+				<div class="stats">
+					<div>Progress</div>
+					<div class="stat-bar-bg">
+						<div class="stat-bar-progress-<%= todo.progress %>"></div> 
+					</div>
+					<div><%= todo.progress %>%</div>
+				</div>
+				<div class="stats">
+					<div>Work Rate</div>
+					<div class="stat-bar-bg">
+						<div class="stat-bar-progress-<%= todo.workRate %>"></div>
+					</div>
+					<div><%= todo.workRate %>%</div>
+				</div>
+				<div class="stats"> 
+					<div>Procrastination</div>
+					<div class="stat-bar-bg">
+						<div class="stat-bar-progress-<%= todo.procrastination %>"></div>
+					</div>
+					<div><%= todo.procrastination %>%</div>
+				</div>
+			</div>
 		</div>
 		<div class="todo-delete">
 			<div class="todo-edit">
