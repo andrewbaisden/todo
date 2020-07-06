@@ -1,5 +1,7 @@
 # To Do App
 
+![Todo App](https://res.cloudinary.com/d74fh3kw/image/upload/v1594053856/todo-app_myjdpa.jpg 'Todo App')
+
 ## Install and Setup
 
 1. `cd` into the backend folder and then run the command `npm init` to install the node dependencies.
