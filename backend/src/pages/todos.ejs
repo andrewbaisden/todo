@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>To Do Home Page</title>
-	</head>
-	<body>
-		<h1>To Do Home Page</h1>
-		<div>
-			<% todos.forEach(todo => { %>
-			<ul>
-				<li><a href="/todo/<%= todo.id %>"><%= todo.title %></a></li>
-				<li><%= todo.notes %></li>
-				<li><%= todo.priority %></li>
-				<li><img src="<%= todo.image %>" alt="<%= todo.title %>" /></li>
-			</ul>
-			<% }) %>
+<%- include('header'); -%>
+
+	<div class="container">
+		<% todos.forEach(todo => { %>
+		<div class="todo-container">
+			<div><p class="priority-<%= todo.priority %>"><%= todo.priority %></p></div>
+			<div class="todo">
+				<div class="todo-image">
+					<img src="<%= todo.image %>" alt="<%= todo.title %>" />
+				</div>
+				<div class="todo-description">
+					<ul>
+						<li><a href="/todo/<%= todo.id %>"><%= todo.title %></a></li>
+						<li><p class="todo-notes"><%= todo.notes %></p></li>
+					</ul>
+				</div>
+			</div>
+			<div class="todo-delete">
+				<form method="POST" action="/delete">
+					<input type="hidden" name="todoId" value="<%= todo.id %>" />
+					<button type="submit">X</button>
+				</form>
+			</div>
 		</div>
-	</body>
-</html>
+		<% }) %>
+	</div>
+	<%- include('footer'); -%>
+</body>

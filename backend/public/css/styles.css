@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;700&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Mukta', sans-serif;
+	font-size: 1.6rem;
+	background: #1e213b;
+	color: #e4e4e4;
+}
+
+.dashboard {
+	background: #ffffff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 120rem;
+	max-width: 100%;
+	margin: 5rem auto;
+	padding: 3rem;
+	border-radius: 1rem;
+	-webkit-box-shadow: 0px 0px 92px 10px rgba(11, 23, 36, 1);
+	-moz-box-shadow: 0px 0px 92px 10px rgba(11, 23, 36, 1);
+	box-shadow: 0px 0px 92px 10px rgba(11, 23, 36, 1);
+}
+
+.dashboard-btn {
+	text-decoration: none;
+	font-weight: bold;
+	color: #1f213c;
+}
+
+.add-todo-btn {
+	background: #9fa2ff;
+	color: #ffffff;
+	border-radius: 0.5rem;
+	padding: 1rem;
+	text-decoration: none;
+}
+
+.container {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0 auto;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.todo-container {
+	background: #232744;
+	padding: 2rem;
+	width: 50rem;
+	margin: 2rem;
+	-webkit-box-shadow: 0px 0px 10px 10px rgb(110, 79, 79);
+	-moz-box-shadow: 0px 0px 10px 10px rgb(20, 105, 105);
+	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.13);
+}
+
+.todo {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.todo-image img {
+	width: 10rem;
+	height: 10rem;
+	border-radius: 50%;
+}
+
+.todo-description {
+	width: 30rem;
+}
+
+.todo-description ul {
+	margin-left: 5rem;
+	list-style: none;
+}
+
+.todo-description a {
+	font-size: 1.8rem;
+	color: #ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-bottom: 2rem;
+	display: block;
+}
+
+.todo-notes {
+	height: 10rem;
+}
+
+.priority-Low {
+	background: rgb(12, 70, 12);
+	font-size: 1.2rem;
+	padding: 0.2rem;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.priority-Medium {
+	background: rgb(172, 172, 18);
+	font-size: 1.2rem;
+	padding: 0.2rem;
+	width: 100%;
+	text-align: center;
+	color: #1e213b;
+	margin-bottom: 2rem;
+}
+
+.priority-High {
+	background: rgb(141, 27, 27);
+	font-size: 1.2rem;
+	padding: 0.2rem;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.todo-delete {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.todo-delete button {
+	padding: 0.3rem;
+	cursor: pointer;
+}

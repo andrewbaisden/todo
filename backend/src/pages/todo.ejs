@@ -1,28 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>To Do - Product</title>
-	</head>
-	<body>
-		<div>
-			<h1><%= todo.id %></h1>
-			<ul>
-				<li><%= todo.title %></li>
-				<li><%= todo.notes %></li>
-				<li><%= todo.priority %></li>
-				<li><img src="<%= todo.image %>" alt="<%= todo.title %>" /></li>
-			</ul>
-		</div>
-		<div>
-			<form method="POST" action="/delete">
-				<input type="hidden" name="todoId" value="<%= todo.id %>" />
-				<button type="submit">Delete</button>
-			</form>
-		</div>
-		<div>
-			<a href="/edit-todo/<%= todo.id %>?edit=true">Edit</a>
-		</div>
-	</body>
-</html>
+<%- include('header'); -%>
+
+	<div>
+		<h1><%= todo.id %></h1>
+		<ul>
+			<li><%= todo.title %></li>
+			<li><%= todo.notes %></li>
+			<li><%= todo.priority %></li>
+			<li><img src="<%= todo.image %>" alt="<%= todo.title %>" /></li>
+		</ul>
+	</div>
+	<div>
+		<form method="POST" action="/delete">
+			<input type="hidden" name="todoId" value="<%= todo.id %>" />
+			<button type="submit">Delete</button>
+		</form>
+	</div>
+	<div>
+		<a href="/edit-todo/<%= todo.id %>?edit=true">Edit</a>
+	</div>
+	<%- include('footer'); -%>
+</body>
