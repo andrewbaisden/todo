@@ -1,6 +1,6 @@
 # To Do App
 
-![Todo App](https://res.cloudinary.com/d74fh3kw/image/upload/v1594053856/todo-app_myjdpa.jpg 'Todo App')
+![Todo App](/img/todo.jpeg 'Todo App')
 
 ## Install and Setup
 
